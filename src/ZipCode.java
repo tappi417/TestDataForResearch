@@ -1,6 +1,6 @@
-public class ZipCode {
+class ZipCode {
 
-	public String searchAddress(int zipcode) {
+	public static String searchAddress(int zipcode) {
 
 		String address = null;
 		switch (zipcode) {
