@@ -6,6 +6,7 @@ class Account {
 	private String address = null;
 	private String tel = null;
 	private Card card;
+	private Ticket ticket;
 
 	Account(String name) {
 		this.name = name;
@@ -38,5 +39,10 @@ class Account {
 	public void setCard(Card card) {
 		this.card = card;
 	}
-	
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;		
+	}
+	public Ticket getTicket() {
+		return this.ticket;
+	}
 }

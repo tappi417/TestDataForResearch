@@ -3,13 +3,20 @@ class Main {
 	public static void main(String[] args) {
 
 		AccountManager manager = new AccountManager();
-		manager.makeAccount("Taro", false);
-		manager.makeAccount("Jiro", true);
-		manager.makeAccount("Hanako", true);
-		
-		Account account = manager.getAccount("Jiro");
+		manager.makeAccount("Taro", true);
+
+		Account account = manager.getAccount("Taro");
 		if(account.getCard() != null) {
-			System.out.println(account.getCard().getName());			
+			System.out.println("Taro has a card");
+			account.setTicket(new Ticket("Taro"));
+		} else {
+			return;
 		}
+		Ticket ticket = account.getTicket();
+		System.out.println(ticket.isUsed());
+		if (!ticket.isUsed()) {
+			account.getTicket().use();
+		}
+		System.out.println(ticket.isUsed());
 	}
 }

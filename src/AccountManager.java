@@ -7,11 +7,10 @@ class AccountManager {
 	public void makeAccount(String name, boolean makingCard) {
 		Account account = new Account(name);
 		account.SetAddress(ZipCode.searchAddress(1));
+		account.setTel("XXX-XXXX-XXXX");
 		if (makingCard) {
-			account.setTel("XXX-XXXX-XXXX");
 			makeCard(account);
 		}
-
 		accountList.add(account);
 	}
 
